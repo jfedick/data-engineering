@@ -1,0 +1,21 @@
+<%= form_for @purchase_datum, :html => {:multipart => true} do |f| %>
+  <% if @purchase_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@purchase_datum.errors.count, "error") %> prohibited this purchase_datum from being saved:</h2>
+
+      <ul>
+      <% @purchase_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>File:</strong>
+  <%= @purchase_datum.file %>
+</p>
+
+<p>
+  <strong>Gross Revenue:</strong>
+  <%= number_to_currency(@purchase_datum.gross_revenue, :unit => "$") %>
+</p>
+
+<%= link_to 'Edit', edit_purchase_datum_path(@purchase_datum) %> |
+<%= link_to 'Back', purchase_data_path %>

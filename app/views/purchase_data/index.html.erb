@@ -1,0 +1,29 @@
+<h1>Listing purchase_data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Gross Revenue</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchase_data.each do |purchase_datum| %>
+      <tr>
+        <td><%= purchase_datum.file %></td>
+        <td><%= number_to_currency(purchase_datum.gross_revenue, :unit => "$") %></td>
+        <td><%= link_to 'Show', purchase_datum %></td>
+        <td><%= link_to 'Edit', edit_purchase_datum_path(purchase_datum) %></td>
+        <td><%= link_to 'Destroy', purchase_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchase datum', new_purchase_datum_path %>
